@@ -1,5 +1,5 @@
-.containe-user{
-    display: flex;    
+.containe-user {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -7,6 +7,7 @@
     font-weight: 500;
     font-family: "Inter", sans-serif;
 }
+
 .containe-user-card {
     gap: 40px;
     width: 300px;
@@ -20,7 +21,10 @@
     border: 1px solid #000742;
     background-color: rgb(1, 44, 138);
     box-shadow: 1px 3px 11px 1px rgb(13, 0, 88);
+    position: relative;
+    overflow: hidden;
 }
+
 .containe-user-card input {
     background-color: transparent;
     border: none;
@@ -29,23 +33,27 @@
     border-bottom: 0.3px solid gainsboro;
     font-size: 16px;
 }
+
 .containe-user-card input::placeholder {
     font-size: 20px;
     color: #ffffff;
 }
+
 .profile-pic {
-    width: 100px;         
-    height: 100px; 
-    margin: 0;       
-    border-radius: 50%;   
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    border-radius: 50%;
 }
+
 .id-number {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 24px;
 }
-.button-user{
+
+.button-user {
     border: 1px solid rgb(255, 255, 255);
     background-color: transparent;
     color: #ffffff;
@@ -54,14 +62,47 @@
     height: 50px;
     font-size: 18px;
     border-radius: 4px;
-    cursor:  pointer;
-
+    cursor: pointer;
 }
-.button-user:hover{
+
+.button-user:hover {
     box-shadow: 1px 3px 11px 1px rgb(73, 73, 73);
 }
-.details{
+
+.details {
     text-decoration: none;
     color: #ffffff;
 }
-  
+
+/* Contenedor para las partículas */
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no interfiera con los clics */
+    overflow: hidden;
+}
+
+/* Partículas */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: particle-animation 0.6s ease-out forwards;
+}
+
+/* Animación de las partículas */
+@keyframes particle-animation {
+    from {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate(0, -100px) scale(0);
+    }
+}

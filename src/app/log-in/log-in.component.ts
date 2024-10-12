@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
-import { BranchService } from "../branch.service"
+import { ClientService } from '../client.service';
 
 @Component({
   selector: 'app-log-in',
@@ -12,21 +12,18 @@ import { BranchService } from "../branch.service"
 export  default class LogInComponent {
 
   constructor(
-    private branchService: BranchService,
+    private clientService: ClientService,
     private router: Router
   ){}
 
   identificationValue = "1234567890"
 
   getClientById(){
-    this.branchService.getClientById(this.identificationValue)
+    this.clientService.getClientById(this.identificationValue)
     .subscribe((response: any) => { 
       if (!response.email || !response.phone) {
-        console.log("1")
-      this.router.navigate(["/user"]); 
+      this.router.navigate([`/user/${this.identificationValue}`]); 
     } else {
-      console.log("2")
-
       this.router.navigate(["/"]);  
     }
   });

@@ -7,8 +7,8 @@ import { ContractedServicesComponent } from './contracted-services/contracted-se
 
 export const routes: Routes = [
     { path: 'login', component: LogInComponent },
-    { path: 'options', component: InvestmentOptionsComponent},
-    { path: 'user', component: UserCardComponent },
+    { path: '', component: InvestmentOptionsComponent},
+    { path: 'user/:id', component: UserCardComponent },
     { path: 'initial-amount', component: InitialAmountComponent},
     { path: 'contracted', component: ContractedServicesComponent},
     { path: '', redirectTo:'/login', pathMatch: 'full' },

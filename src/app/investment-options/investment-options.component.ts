@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocationDropdownComponent } from '../location-dropdown/location-dropdown.component';
+import { BranchService } from '../branch.service';
 
 @Component({
   selector: 'app-investment-options',
@@ -8,6 +9,25 @@ import { LocationDropdownComponent } from '../location-dropdown/location-dropdow
   templateUrl: './investment-options.component.html',
   styleUrl: './investment-options.component.css'
 })
-export class InvestmentOptionsComponent {
+export class InvestmentOptionsComponent implements OnInit{
+
+  constructor(private branchService: BranchService){}
+  branches:any = []
+
+  ngOnInit(): void {
+    this.getAllBranches()
+  }
+
+  getAllBranches(){
+    this.branchService.getAllBranches()
+    .subscribe(
+      (response: any) => {
+        console.log(response) 
+      },
+      (error: any) => {
+        console.error('Error updating profile', error);
+      }
+    )
+  }
   
 }
