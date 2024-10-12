@@ -9,7 +9,7 @@ export const routes: Routes = [
     { path: 'login', component: LogInComponent },
     { path: '', component: InvestmentOptionsComponent},
     { path: 'user/:id', component: UserCardComponent },
-    { path: 'start-subscription:/id', component: InitialAmountComponent},
+    { path: 'a', component: InitialAmountComponent},
     { path: 'contracted', component: ContractedServicesComponent},
     { path: '', redirectTo:'/login', pathMatch: 'full' },
     { path: '**', redirectTo: '/login' } 

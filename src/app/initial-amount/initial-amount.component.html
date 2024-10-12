@@ -1,22 +1,24 @@
-<main class="initial-amount-container">
-    <section class="initial-amount-section">
+<main class="modal-overlay" (click)="closeModal()">
+    <section class="initial-amount-section" (click)="$event.stopPropagation()">
         <div class="input-range-container">
             <h2 class="section-title">Elige el monto mensual de ahorro</h2>
+            <button class="close-btn" (click)="closeModal()">X</button>
             <div class="range-label-container">
-                <label for="investment-range" class="range-label">Monto mínimo de inversión</label>
+                <label for="investment-range" class="range-label">Monto mínimo: {{product.minimumAmount | currency:'COP':true}}</label>
                 <input 
                     type="range" 
                     id="investment-range" 
-                    min="75000" 
-                    max="250000" 
-                    step="100" 
+                    min="{{product.minimumAmount}}" 
+                    max="500000" 
+                    step="100000" 
                     class="amount-input"
                     (input)="onRangeChange($event)"
                 >
-                <label for="investment-range" class="range-label">Monto máximo de inversión</label>
+                <label for="investment-range" class="range-label">Monto máximo</label>
             </div>
-            <p class="amount-display">El monto es de: <span id="rangeValue">${{ rangeValue }} COP</span></p>  
+            <p class="amount-display">Valor cuota: <span id="rangeValue">${{ rangeValue }} COP</span></p>  
             <div class="submit-button-container">
+                <button (click)="closeModal()" class="cancel-button">Cancelar</button>
                 <button (click)="showModal()" class="submit-button">Inscribirse</button>
             </div>  
         </div>

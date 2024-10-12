@@ -18,10 +18,15 @@
                 <p class="profit-percentage">{{product.averageYield}}%</p>
                 <p>$72.900 <span class="product-card__span">/Mes</span></p>
                 <p class="description">{{product.description}}</p>
-                <button class="product-card__button--primary">
-                    <a href="initial-amount">Suscribirme</a>
+                <button 
+                    class="product-card__button--primary"
+                    (click)="openModal(product)">
+                    <a href="#">Suscribirme</a>
                 </button>
             </li>
         </ul>
+    </section>
+    <section>
+        <app-initial-amount *ngIf="isModalOpen" [product]="selectedProduct" (close)="closeModal()"></app-initial-amount>
     </section>  
 </main>

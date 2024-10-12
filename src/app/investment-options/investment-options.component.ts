@@ -3,11 +3,12 @@ import { LocationDropdownComponent } from '../location-dropdown/location-dropdow
 import { BranchService } from '../branch.service';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
+import { InitialAmountComponent } from '../initial-amount/initial-amount.component';
 
 @Component({
   selector: 'app-investment-options',
   standalone: true,
-  imports: [CommonModule, LocationDropdownComponent],
+  imports: [CommonModule, LocationDropdownComponent, InitialAmountComponent],
   templateUrl: './investment-options.component.html',
   styleUrl: './investment-options.component.css'
 })
@@ -17,8 +18,11 @@ export class InvestmentOptionsComponent implements OnInit{
     private branchService: BranchService,
     private productService: ProductService
   ){}
+
   branches:any = []
   products: any[] = []
+  selectedProduct: any = {}
+  isModalOpen = false;
 
   productNameForClient = {
     "FPV_EL CLIENTE_RECAUDADORA": "Ahorro Seguro",
@@ -59,6 +63,15 @@ export class InvestmentOptionsComponent implements OnInit{
 
   getProductNameForClient(name: never){
     return this.productNameForClient[name]
+  }
+
+  openModal(product: any) {
+    this.selectedProduct = product;
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
   }
   
 }
