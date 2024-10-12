@@ -22,7 +22,7 @@ export class InvestmentOptionsComponent implements OnInit{
     this.branchService.getAllBranches()
     .subscribe(
       (response: any) => {
-        console.log(response) 
+        this.branches = response;
       },
       (error: any) => {
         console.error('Error updating profile', error);
