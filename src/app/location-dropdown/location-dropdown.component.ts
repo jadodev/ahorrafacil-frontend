@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-location-dropdown',
@@ -10,5 +10,10 @@ import { Component, Input } from '@angular/core';
 })
 export class LocationDropdownComponent {
   @Input() branches: any[] = [];
+  @Output() branchSelected = new EventEmitter<any>();
+
+  onBranchChange(selectedBranch: Event) {
+    this.branchSelected.emit(selectedBranch); 
+  }
 
 }
