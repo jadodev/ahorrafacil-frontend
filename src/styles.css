@@ -1,0 +1,16 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(https://media.istockphoto.com/id/1386705180/es/foto/fondo-abstracto-azul.jpg?s=612x612&w=0&k=20&c=Dt0FSgT7XjZ86AH4nePjUVbISrE_4QiEZy9tN9zqVxw=);
+    background-size: cover;
+    background-position: center;
+}
+  
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+} 

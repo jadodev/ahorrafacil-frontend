@@ -1,0 +1,124 @@
+.initial-amount-container {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.brand-title {
+    color: #a5f89f;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    font-size: 40px;
+    width: 100%;
+}
+
+header {
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+header span {
+    color: rgba(0, 17, 255, 0.548);
+}
+
+.initial-amount-section {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    height: 100%;
+}
+
+.input-range-container {
+    width: 700px;
+    height: 250px;
+    display: flex;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    gap: 40px;
+    border: 1px solid #000742;
+    background-color: rgb(1, 44, 138);
+    box-shadow: 1px 3px 11px 1px rgb(13, 0, 88);
+}
+
+.input-range-container h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.range-label-container {
+    display: flex;
+    position: relative;
+    font-size: 14px;
+    width: 700px;
+    right: 40px;
+    top: 20px;
+}
+
+.range-label {
+    margin-top: -30px;
+    position: relative;
+}
+
+.amount-input {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #68ff5dc4;
+    outline: none;
+    width: 300px;
+    height: 7px;
+    border-radius: 5px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.amount-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.range-label-container label:first-of-type {
+    left: 40px;
+}
+
+.range-label-container label:last-of-type {
+    right: 40px;
+}
+
+.submit-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-button {
+    width: 300px;
+    height: 50px;
+    color: #ffffff;
+    background-color: #68ff5dc4;
+    font-size: 26px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

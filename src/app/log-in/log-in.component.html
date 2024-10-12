@@ -1,0 +1,37 @@
+<main class="login-container">
+    <header>
+        <h1  class="brand-title">
+          Ahorra<span>facil</span>
+        </h1>
+    </header>
+    <section class="login-info-container">
+
+        <div>
+            <h2 class="login-info-title">Ahorrafacil, the savings fund manager that adapts to you, is here!</h2>
+            <p class="login-info-description">Open your account now and start growing with flexibility and security.</p>
+        </div>
+
+        <section>
+            <div class="login-form" aria-labelledby="login-form-title">
+                <h2 id="login-form-title" class="login-form-title">Log in to Ahorrafacil</h2>
+                <p class="login-form-description">Enter your details below</p>
+
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        name="email"
+                        id="email"
+                        value="{{identificationValue}}"
+                        placeholder="ID number"
+                    >    
+                </div>
+                    <button 
+                    (click)="getClientById()"
+                    class="login-button">Log in</button>
+            </div>
+        </section>
+        
+    </section>
+</main>
+<router-outlet></router-outlet>
+

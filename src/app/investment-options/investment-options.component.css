@@ -1,0 +1,120 @@
+main {
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+}
+.entenidads-disponibles {
+    color: #ffffff;
+    display: flex;
+    font-size: 32px;
+    justify-content: center;
+    align-items: center;
+}
+.container-sedes{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 16rem;
+}
+.product-card-container {
+    gap: 100px;
+    z-index: 1;
+    display: flex;
+}
+
+.description {
+    margin: 0;
+    color: rgb(187, 187, 187);
+}
+.product-list {
+    gap: 34px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+}
+.product-card {
+    gap: 20px;
+    width: 300px;
+    height: 480px;
+    display: flex;
+    color: #ffffff;
+    cursor:  pointer;
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #000742;
+    background-color: rgb(1, 44, 138);
+    box-shadow: 1px 3px 11px 1px rgb(13, 0, 88);
+}
+.product-card:hover {
+    background-color: rgb(9, 0, 129);
+}
+.product-card__title {
+    margin: 0;
+    font-size: 38px;
+}
+
+.product-card__span {
+    color: rgb(201, 201, 201);
+}
+
+.product-card__button--primary {
+    border: none;
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 8px;
+    background-color: #7fff76c7;
+}
+.product-card__button--primary a{
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.profit-percentage {
+    margin: 0;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.category {
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .product-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .container-sedes{
+        gap: 10px;
+        font-size: 24px;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px; 
+    }
+    .entenidads-disponibles {
+        font-size: 20px;
+        width:100%;
+        color: #ffffff;
+    }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container-sedes{
+        gap: 110px;
+        font-size: 24px;
+        justify-content: end;
+        padding: 10px; 
+    }
+    .entenidads-disponibles {
+        font-size: 28px;
+        color: #ffffff;
+
+    }
+}

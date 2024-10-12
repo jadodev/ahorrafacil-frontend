@@ -1,0 +1,67 @@
+.containe-user{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+}
+.containe-user-card {
+    gap: 40px;
+    width: 300px;
+    height: 480px;
+    display: flex;
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #000742;
+    background-color: rgb(1, 44, 138);
+    box-shadow: 1px 3px 11px 1px rgb(13, 0, 88);
+}
+.containe-user-card input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    border-bottom: 0.3px solid gainsboro;
+    font-size: 16px;
+}
+.containe-user-card input::placeholder {
+    font-size: 20px;
+    color: #ffffff;
+}
+.profile-pic {
+    width: 100px;         
+    height: 100px; 
+    margin: 0;       
+    border-radius: 50%;   
+}
+.id-number {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 24px;
+}
+.button-user{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+    color: #ffffff;
+    box-shadow: 1px 3px 11px 1px rgb(9, 0, 61);
+    width: 120px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor:  pointer;
+
+}
+.button-user:hover{
+    box-shadow: 1px 3px 11px 1px rgb(73, 73, 73);
+}
+.details{
+    text-decoration: none;
+    color: #ffffff;
+}
+  
