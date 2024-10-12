@@ -1,6 +1,6 @@
 <main class="services-wrapper">
     <header class="header-content">
-        <h1 class="logo-title"> Easy<span>Fund</span></h1>
+        <h1 class="logo-title"> Ahorra<span>facil</span></h1>
         <a href="/options" class="add-services-link">Contratar más servicios</a>
         <a href="" class="add-services-link">Account movements details</a>
         <aside class="profile-wrapper">
@@ -11,58 +11,19 @@
     <section class="contracted-services-section">
             <h2 class="contracted-services-title">Servicios contratados:</h2>
         <ul class="services-list">
-            <li class="service-item">
+            <li 
+                *ngFor="let sub of subscriptionsWithProducts"
+                class="service-item">
+                <button class="unsubscribe-btn">Desuscribirse X</button>
                 <article class="service-details">
                     <header>
-                        <h3 class="service-name">Ecopetrol</h3>
-                        <p class="service-plan">FVP</p>
+                        <h3 class="service-name">{{sub.product.name}}</h3>
+                        <p class="service-plan">{{sub.product.productType}}</p>
                     </header>
                     <section class="monthly-value-section">
                         <ul class="monthly-value-list">
                             <li>Valor mensual</li>
-                            <li class="monthly-value">$75,000</li>
-                        </ul>
-                    </section>
-                </article>
-            </li>
-            <li class="service-item">
-                <article class="service-details">
-                    <header>
-                        <h3 class="service-name">Ecopetrol</h3>
-                        <p class="service-plan">FVP</p>
-                    </header>
-                    <section class="monthly-value-section">
-                        <ul class="monthly-value-list">
-                            <li>Valor mensual</li>
-                            <li class="monthly-value">$75,000</li>
-                        </ul>
-                    </section>
-                </article>
-            </li>
-            <li class="service-item">
-                <article class="service-details">
-                    <header>
-                        <h3 class="service-name">Ecopetrol</h3>
-                        <p class="service-plan">FVP</p>
-                    </header>
-                    <section class="monthly-value-section">
-                        <ul class="monthly-value-list">
-                            <li>Valor mensual</li>
-                            <li class="monthly-value">$75,000</li>
-                        </ul>
-                    </section>
-                </article>
-            </li>
-            <li class="service-item">
-                <article class="service-details">
-                    <header>
-                        <h3 class="service-name">Ecopetrol</h3>
-                        <p class="service-plan">FVP</p>
-                    </header>
-                    <section class="monthly-value-section">
-                        <ul class="monthly-value-list">
-                            <li>Valor mensual</li>
-                            <li class="monthly-value">$75,000</li>
+                            <li class="monthly-value">{{sub.subscriptionAmount |  currency:'COP':'symbol':'1.0-0' }}</li>
                         </ul>
                     </section>
                 </article>

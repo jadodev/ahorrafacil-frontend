@@ -71,7 +71,7 @@ span {
 }
 .service-item {
     background-color: #ebebeb;
-    border-radius: 4px;
+    border-radius: 8px;
     width: 270px;
     height: 150px;
     display: flex;
@@ -120,3 +120,28 @@ span {
         flex-wrap: wrap;
     }
 }
+
+.service-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .unsubscribe-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0 8px 0 8px;
+    opacity: 0; /* Oculto inicialmente */
+    transition: opacity 0.3s ease; /* Transición para el efecto suave */
+  }
+  
+  .service-item:hover .unsubscribe-btn {
+    opacity: 1; /* Mostrar el botón con una transición suave */
+  }
+  
