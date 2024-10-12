@@ -5,7 +5,7 @@
         <a href="" class="add-services-link">Account movements details</a>
         <aside class="profile-wrapper">
             <figure [style.backgroundColor]="profileColor" class="profile-avatar"></figure>
-            <a href="user" class="user-profile-link">User</a>
+            <a href="user" class="user-profile-link">DU</a>
         </aside>
     </header>
     <section class="contracted-services-section">
@@ -14,7 +14,10 @@
             <li 
                 *ngFor="let sub of subscriptionsWithProducts"
                 class="service-item">
-                <button class="unsubscribe-btn">Desuscribirse X</button>
+                <button 
+                    class="unsubscribe-btn"
+                    (click)="confirmDelete(sub.id)"
+                >Desuscribirse X</button>
                 <article class="service-details">
                     <header>
                         <h3 class="service-name">{{sub.product.name}}</h3>

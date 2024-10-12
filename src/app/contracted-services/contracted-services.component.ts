@@ -33,38 +33,51 @@ export class ContractedServicesComponent {
   getSubscriptions() {
     const id = this.route.snapshot.paramMap.get('id');
     
+    // Primera petición para obtener las suscripciones
     this.productService.getAllProductsSuscribed(id).pipe(
       mergeMap((subscriptions: any[]) => {
         if (!subscriptions || subscriptions.length === 0) {
           return []; 
         }
+
+        // Filtrar las suscripciones con status "inactive"
+        const activeSubscriptions = subscriptions.filter(sub => sub.status !== 'inactive');
         
-        // Crear un array de peticiones usando `getProductById`
-        const productRequests = subscriptions.map(subscription => 
+        if (activeSubscriptions.length === 0) {
+          return []; 
+        }
+
+        // Crear un array de peticiones usando `getProductById` solo para suscripciones activas
+        const productRequests = activeSubscriptions.map(subscription => 
           this.productService.getProductById(subscription.productId)
         );
 
         // Utilizar `forkJoin` para ejecutar todas las peticiones en paralelo
         return forkJoin(productRequests).pipe(
           map((products: any[]) => {
-            // Combinar suscripciones con sus productos correspondientes
-            return subscriptions.map((subscription, index) => ({
+            // Combinar suscripciones activas con sus productos correspondientes
+            return activeSubscriptions.map((subscription, index) => ({
               ...subscription,
-              product: products[index] 
+              product: products[index]  
             }));
           })
         );
       })
     ).subscribe(
-      (subscriptionsWithProducts: any) => {
+      (subscriptionsWithProducts: any[]) => {
         // Guardar la combinación de suscripciones con sus productos
         this.subscriptionsWithProducts = subscriptionsWithProducts;
         console.log(this.subscriptionsWithProducts);
-      },
+      }
     );
   }
 
-  confirmDelete() {
+  deleteSubscriptionById(id: String){
+    this.productService.deleteSubscriptionById(id)
+    .subscribe(console.log)
+  }
+
+  confirmDelete(id: String) {
     Swal.fire({
       title: '¿Estás seguro?',
       text: '¡No podrás revertir esto!',
@@ -74,12 +87,15 @@ export class ContractedServicesComponent {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sí, eliminarlo!'
     }).then((result) => {
+      
       if (result.isConfirmed) {
+        this.deleteSubscriptionById(id)
         Swal.fire({
           title: '¡Eliminado!',
           text: 'El servicio se ha sido eliminado.',
           icon: 'success'
         });
+        this.getSubscriptions()
       }
     });
   }
