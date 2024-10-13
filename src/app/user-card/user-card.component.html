@@ -1,7 +1,7 @@
 <main class="containe-user">
   <article class="containe-user-card">
     <div [style.backgroundColor]="profileColor" class="profile-pic"></div>
-    <p class="id-number">ID Number</p>
+    <p class="id-number">{{userDetails?.name}}</p>
     <form [formGroup]="userForm">
       <input
         type="text"
