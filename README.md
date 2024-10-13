@@ -1,4 +1,5 @@
-[![Título del Video](https://img.youtube.com/vi/w5KSx5H-jxM/maxresdefault.jpg)](https://www.youtube.com/watch?v=https://img.youtube.com/vi/w5KSx5H-jxM/maxresdefault.jpg)
+[![Título del Video](https://i.imgur.com/dz6oURx.png)](https://www.youtube.com/watch?v=w5KSx5H-jxM)
+
 
 # LandingPages
 
