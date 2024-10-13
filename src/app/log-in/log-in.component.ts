@@ -26,7 +26,7 @@ export  default class LogInComponent {
     .subscribe((response: any) => { 
       this.cookieService.set('userDetails', JSON.stringify(response));
       if (!response.email || !response.phone) {
-      this.router.navigate([`/user/${this.identificationValue}`]); 
+        this.router.navigate([`/user/${this.identificationValue}`]); 
       } else {
         this.router.navigate(["/"]);  
       }

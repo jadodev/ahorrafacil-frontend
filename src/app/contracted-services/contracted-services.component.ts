@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ContractedServicesComponent {
 
-  id: string = "";
+  id: string | null = "";
   profileColor: string | undefined;
   subscriptionsWithProducts: any = [];
 
@@ -28,6 +28,7 @@ export class ContractedServicesComponent {
   ngOnInit(): void {
     this.profileColor = randomColor();
     this.getSubscriptions()
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
   getSubscriptions() {

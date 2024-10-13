@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'; 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ClientService {
 
   constructor(private http: HttpClient) { }
-  url_base = "http://localhost:8080"
+  url_base = environment.apiUrl;
 
   getClientById(id: string): any{
     return this.http.get(`${this.url_base}/client/cc/${id}`)

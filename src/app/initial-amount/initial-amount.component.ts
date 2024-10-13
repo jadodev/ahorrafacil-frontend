@@ -66,7 +66,7 @@ export class InitialAmountComponent {
         icon: 'success',
       }).then((result) => {
         if (result.isConfirmed) {
-          this.router.navigate([`/subscription/${this.clientId}`]);
+          this.router.navigate([`/subscriptions/${this.clientId}`]);
         }
       });
   }

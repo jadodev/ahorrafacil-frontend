@@ -8,10 +8,10 @@ import { AccountMovementsComponent } from './account-movements/account-movements
 
 export const routes: Routes = [
     { path: 'login', component: LogInComponent },
-    { path: '',component: InvestmentOptionsComponent},
+    { path: '', component: InvestmentOptionsComponent},
     { path: 'user/:id', component: UserCardComponent },
     { path: 'subscriptions/:id', component: ContractedServicesComponent},
-    {path: 'account-history', component: AccountMovementsComponent},
+    {path: 'account-history/:id', component: AccountMovementsComponent},
     { path: '**', redirectTo: '/login' } 
 ];
 export class AppRoutingModule { }

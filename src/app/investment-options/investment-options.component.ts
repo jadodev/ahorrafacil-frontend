@@ -23,6 +23,7 @@ export class InvestmentOptionsComponent implements OnInit{
   products: any[] = []
   selectedProduct: any = {}
   isModalOpen = false;
+  defaultBranch: any = {}
 
   productNameForClient = {
     "FPV_EL CLIENTE_RECAUDADORA": "Ahorro Seguro",
@@ -34,6 +35,7 @@ export class InvestmentOptionsComponent implements OnInit{
 
   ngOnInit(): void {
     this.getAllBranches()
+
   }
 
   getAllBranches(){
@@ -41,6 +43,9 @@ export class InvestmentOptionsComponent implements OnInit{
     .subscribe(
       (response: any) => {
         this.branches = response;
+        this.defaultBranch = response[0];
+        let { id } = this.defaultBranch;
+        this.productsByBranch(id)
       },
       (error: any) => {
         console.error('Error updating profile', error);
@@ -48,15 +53,14 @@ export class InvestmentOptionsComponent implements OnInit{
     )
   }
 
+
+
   productsByBranch(id: any) {
     this.productService.getProductByBranch(id)
     .subscribe(
       (response: any) => {
         this.products = response
         console.log(response)
-      },
-      (error: any) => {
-        console.error('Error updating profile', error);
       }
     )
   }

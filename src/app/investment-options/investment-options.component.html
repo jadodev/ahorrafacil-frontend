@@ -1,11 +1,16 @@
 <main>
     <section class="entities-info">
-        <div class="container-sedes">
-            <h2 class="entenidads-disponibles">Entities available at this location</h2>
-            <app-location-dropdown 
-                [branches]="branches"
-                (branchSelected)="productsByBranch($event)"
-            />
+        <div class="header">
+            <diV class="">
+                    <h2 class="entenidads-disponibles">Elige tu sede favorita </h2> 
+                    <app-location-dropdown 
+                        [branches]="branches"
+                        (branchSelected)="productsByBranch($event)"
+                    />
+                </diV>
+
+                <h3 class="entenidads-disponibles">{{defaultBranch?.name}}</h3>
+            
         </div>
         <ul class="product-list">
             <li 

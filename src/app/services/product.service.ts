@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ProductService {
 
   constructor(private http: HttpClient) { }
-  url_base = "http://localhost:8080"
+  url_base = environment.apiUrl;
 
   getProductByBranch(branchId: String): Observable<any>{
     return this.http.get(`${this.url_base}/product/${branchId}/products`)
@@ -29,6 +30,10 @@ export class ProductService {
 
   getProductById(productId: any): Observable<any>{
     return this.http.get(`${this.url_base}/product/${productId}`)
+  }
+
+  getTransactionsByClient(clientId: any){
+    return this.http.get(`${this.url_base}/transaction-history/${clientId}`)
   }
 
 }

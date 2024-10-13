@@ -2,7 +2,7 @@
     
     <header class="header-section">
         <h1 class="logo-title"> Easy<span>Fund</span></h1>
-        <a href="/options" class="service-link">Contratar más servicios</a>
+        <a href="/" class="service-link">Contratar más servicios</a>
         <aside class="profile-section">
             <figure [style.backgroundColor]="profileColor" class="avatar-icon"></figure>
             <a href="user" class="profile-link">User</a>
@@ -19,30 +19,14 @@
             </ul>
         </section>    
 
-        <section class="transaction-lists">
+        <section 
+            class="transaction-lists"
+            *ngFor="let mov of transactions">
             <ul class="transaction-item">
-                <li>Ecopetrol</li>
-                <li>Suscripción</li>
-                <li>09/11</li>
-                <li>-75,000</li>
-            </ul>
-            <ul class="transaction-item">
-                <li>Dinamica</li>
-                <li>Cancelación</li>
-                <li>10/10</li>
-                <li>+150,000</li>
-            </ul>
-            <ul class="transaction-item">
-                <li>Ecopetrol</li>
-                <li>Suscripción</li>
-                <li>09/11</li>
-                <li>-75,000</li>
-            </ul>
-            <ul class="transaction-item">
-                <li>Dinamica</li>
-                <li>Cancelación</li>
-                <li>10/10</li>
-                <li>+150,000</li>
+                <li>{{mov.productId}}</li>
+                <li>{{mov.transactionType}}</li>
+                <li>{{mov.transactionDate | date:'mediumDate'}}</li>
+                <li>{{mov.amount | currency:'COP':'symbol':'1.0-0'}}</li>
             </ul>
         </section>
     </article>

@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { RouterModule, Router } from '@angular/router';
 import { ClientService } from '../client.service';
 import randomColor from 'randomcolor';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.css'
 })
